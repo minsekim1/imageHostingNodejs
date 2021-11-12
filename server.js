@@ -13,13 +13,14 @@ server.listen(app.get("port"), function () {
   console.log("Express server listening on port " + app.get("port"));
 });
 
+const FILE_BASE_DIR = "D:/ftp/";
 // 이미지파일 호스팅 로직
-app.get("/image/:name", function (req, res) {
+app.get("/:name", function (req, res) {
   var filename = req.params.name;
-  console.log(__dirname + "/images/" + filename);
-  fs.exists(__dirname + "/images/" + filename, function (exists) {
+  console.log(FILE_BASE_DIR + filename);
+  fs.exists(FILE_BASE_DIR + filename, function (exists) {
     if (exists) {
-      fs.readFile(__dirname + "/images/" + filename, function (err, data) {
+      fs.readFile(FILE_BASE_DIR + filename, function (err, data) {
         res.end(data);
       });
     } else {
@@ -28,17 +29,17 @@ app.get("/image/:name", function (req, res) {
   });
 });
 
-// 텍스트 파일호스팅 로직
-app.get("/text/:name", function (req, res) {
-  var filename = req.params.name;
-  console.log(__dirname + "/texts/" + filename);
-  fs.exists(__dirname + "/texts/" + filename, function (exists) {
-    if (exists) {
-      fs.readFile(__dirname + "/texts/" + filename, function (err, data) {
-        res.end(data);
-      });
-    } else {
-      res.end("file is not exists");
-    }
-  });
-});
+// // 텍스트 파일호스팅 로직
+// app.get("/text/:name", function (req, res) {
+//   var filename = req.params.name;
+//   console.log(FILE_BASE_DIR + "/texts/" + filename);
+//   fs.exists(FILE_BASE_DIR + "/texts/" + filename, function (exists) {
+//     if (exists) {
+//       fs.readFile(FILE_BASE_DIR + "/texts/" + filename, function (err, data) {
+//         res.end(data);
+//       });
+//     } else {
+//       res.end("file is not exists");
+//     }
+//   });
+// });
