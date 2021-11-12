@@ -6,7 +6,7 @@ var http = require("http"); // Http 웹 서버 모듈
 
 var server = http.createServer(app); // 서버 객체 생성
 
-app.set("port", 7080); // 서버 포트 설정
+app.set("port", 80); // 서버 포트 설정
 
 server.listen(app.get("port"), function () {
   // 서버 가동
