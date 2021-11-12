@@ -1,0 +1,25 @@
+{
+  "name": "imagehostingnodejs",
+  "version": "1.0.0",
+  "description": "nodejs로 이미지 호스팅합니다.,",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minsekim1/imageHostingNodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minsekim1/imageHostingNodejs/issues"
+  },
+  "homepage": "https://github.com/minsekim1/imageHostingNodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security"
+  }
+}
